@@ -21,16 +21,16 @@ public class TileAttractor extends TileEntity implements ITickable
     {        
         if(counter == 10)
         {
-           List<EntityLivingBase> list = world.getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(getPos().add(-5, -5, -5), getPos().add(5, 5, 5)));
-           counter = 0;
-           if(list.isEmpty())
-           {
+            List<EntityLivingBase> list = world.getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(getPos().add(-5, -5, -5), getPos().add(5, 5, 5)));
+            counter = 0;
+            if(list.isEmpty())
+            {
                return;
-           }
-           for( EntityLivingBase e : list)
-           {
+            }
+            for( EntityLivingBase e : list)
+            {
                attract(e);
-           }    
+            }    
         }else{
             counter++;
         }

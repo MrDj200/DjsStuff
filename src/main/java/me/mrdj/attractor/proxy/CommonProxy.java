@@ -3,6 +3,7 @@ package me.mrdj.attractor.proxy;
 import me.mrdj.attractor.blocks.BlockAttractor;
 import me.mrdj.attractor.blocks.ModBlocks;
 import me.mrdj.attractor.events.EventHandler;
+import me.mrdj.attractor.tiles.TileAttractor;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -14,6 +15,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  *
@@ -26,6 +28,7 @@ public class CommonProxy
     
     public void preInit(FMLPreInitializationEvent event) 
     {
+        GameRegistry.registerTileEntity(TileAttractor.class, "djsattractor:tile_attractor");
     }
     
     public void init(FMLInitializationEvent event) 

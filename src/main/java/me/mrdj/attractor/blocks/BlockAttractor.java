@@ -27,10 +27,10 @@ public class BlockAttractor extends BlockBaseDj implements ITileEntityProvider
 {
     public BlockAttractor() {
         super("attractor", Material.DRAGON_EGG, Attractor.MODID);
-        setHarvestLevel("pickaxe", 3);
-        setHardness(10);
-        setCreativeTab(CreativeTabs.MISC);
-        setLightOpacity(0);
+        this.setHarvestLevel("pickaxe", 3);
+        this.setHardness(10);
+        this.setCreativeTab(CreativeTabs.MISC);
+        this.setLightOpacity(0);
     }
 
     @Override
@@ -42,8 +42,6 @@ public class BlockAttractor extends BlockBaseDj implements ITileEntityProvider
         }
         return false;
     }
-    
-    
     
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) 
