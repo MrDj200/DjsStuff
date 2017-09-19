@@ -1,6 +1,7 @@
 package me.mrdj.attractor.tiles;
 
 import java.util.List;
+import me.mrdj.attractor.config.Config;
 import me.mrdj.attractor.utils.MiscStuff;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -15,13 +16,15 @@ import net.minecraft.util.math.AxisAlignedBB;
 public class TileAttractor extends TileEntity implements ITickable
 {
     int counter = 0;
+    int maxHigh = Config.maxAttractorRadius;
+    int maxLow = Config.maxAttractorRadius * (- 1);
            
     @Override
     public void update() 
-    {        
+    {   
         if(counter == 10)
         {
-            List<EntityLivingBase> list = world.getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(getPos().add(-5, -5, -5), getPos().add(5, 5, 5)));
+            List<EntityLivingBase> list = world.getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(getPos().add(maxLow, maxLow, maxLow), getPos().add(maxHigh, maxHigh, maxHigh)));
             counter = 0;
             if(list.isEmpty())
             {
