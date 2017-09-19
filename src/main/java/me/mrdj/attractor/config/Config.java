@@ -12,7 +12,11 @@ public class Config
     private static final String CATEGORY_GENERAL = "general";
 
     // This values below you can access elsewhere in your mod:
-    public static int maxAttractorRadius = 5;
+    public static int totalMaxAttractorRadius = 5;
+    public static int minAttractorRadius = 3;
+    public static int maxAttractorRadius = 100;
+    
+    public static boolean canBeMobGriefed = false;
 
     // Call this from CommonProxy.preInit(). It will create our config if it doesn't
     // exist yet and read the values if it does exist.
@@ -33,6 +37,7 @@ public class Config
     private static void initGeneralConfig(Configuration cfg) 
     {
         cfg.addCustomCategoryComment(CATEGORY_GENERAL, "General configuration");
-        maxAttractorRadius = cfg.getInt("Radius", CATEGORY_GENERAL, maxAttractorRadius, 3, 100, "Set the radius of the Attractor block");
+        totalMaxAttractorRadius = cfg.getInt("Radius", CATEGORY_GENERAL, totalMaxAttractorRadius, 3, 100, "Set the max radius of the Attractor block");
+        canBeMobGriefed = cfg.getBoolean("Can be mob griefed", CATEGORY_GENERAL, canBeMobGriefed, "Enable or disable if the block is destructible by mobs");
     }
 }

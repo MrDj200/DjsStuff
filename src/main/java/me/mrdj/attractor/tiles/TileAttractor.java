@@ -15,15 +15,17 @@ import net.minecraft.util.math.AxisAlignedBB;
  */
 public class TileAttractor extends TileEntity implements ITickable
 {
-    int counter = 0;
-    int maxHigh = Config.maxAttractorRadius;
-    int maxLow = Config.maxAttractorRadius * (- 1);
+    private int counter = 0;
+    private int curRange = Config.totalMaxAttractorRadius;
+    private int maxHigh, maxLow;
            
     @Override
     public void update() 
     {   
         if(counter == 10)
         {
+            maxHigh = curRange;
+            maxLow = curRange * (- 1);
             List<EntityLivingBase> list = world.getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(getPos().add(maxLow, maxLow, maxLow), getPos().add(maxHigh, maxHigh, maxHigh)));
             counter = 0;
             if(list.isEmpty())
@@ -38,8 +40,15 @@ public class TileAttractor extends TileEntity implements ITickable
             counter++;
         }
     }
-    
-    
+
+    public int getCurRange() {
+        return curRange;
+    }
+
+    public void setCurRange(int curRange) {
+        this.curRange = curRange;
+    }
+            
     private void attract(EntityLivingBase entity) 
     {
         //  Check if the Entity is a player

@@ -4,6 +4,7 @@ import java.io.File;
 import me.mrdj.attractor.Attractor;
 import me.mrdj.attractor.blocks.BlockAttractor;
 import me.mrdj.attractor.blocks.ModBlocks;
+import me.mrdj.attractor.compat.MainCompatHandler;
 import me.mrdj.attractor.config.Config;
 import me.mrdj.attractor.events.EventHandler;
 import me.mrdj.attractor.tiles.TileAttractor;
@@ -38,6 +39,7 @@ public class CommonProxy
         File cfgDirectory = event.getModConfigurationDirectory();
         config = new Configuration(new File(cfgDirectory.getPath(), "djsmods/" + Attractor.MODID + ".cfg"));
         Config.readConfig();
+        MainCompatHandler.registerTOP();
     }
     
     public void init(FMLInitializationEvent event) 
