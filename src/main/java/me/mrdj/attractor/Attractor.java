@@ -16,7 +16,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(   modid = Attractor.MODID,
         name = Attractor.NAME,
         version = Attractor.VERSION, 
-        acceptedMinecraftVersions = "*",
+        acceptedMinecraftVersions = "[1.12,1.12.2]",
         modLanguage = "java",
         dependencies = "required-after:djscore"
     ) 
@@ -26,7 +26,7 @@ public class Attractor
     public static CommonProxy proxy = new CommonProxy();
     public static final String MODID = "djsattractor";
     public static final String NAME = "Attractor";
-    public static final String VERSION = "1.1"; 
+    public static final String VERSION = "1.3"; 
     public static final boolean DEVENV = (Boolean) Launch.blackboard.get("fml.deobfuscatedEnvironment");
     
     @EventHandler

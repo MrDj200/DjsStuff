@@ -36,6 +36,7 @@ public class TileAttractor extends TileEntity implements ITickable
         }
     }
     
+    
     private void attract(EntityLivingBase entity) 
     {
         //  Check if the Entity is a player
