@@ -12,8 +12,8 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 
 version = "1.5"
-group = "me.mrdj.attractor" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "djsattractor"
+group = "me.mrdj.djsstuff" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "djsstuff"
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {
@@ -34,12 +34,12 @@ minecraft {
 }
 
 repositories {
-        
+    /*    
     maven { 
         // ComputerCraft
         url "https://cc.crzd.me/maven/" 
     }
-    
+    */
     maven { // JEI
         url "http://dvs1.progwml6.com/files/maven"
     }
@@ -58,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    compile "dan200.computercraft:ComputerCraft:1.80pr1-build2"
+   // compile "dan200.computercraft:ComputerCraft:1.80pr1-build2"
     
     deobfCompile "mezz.jei:jei_1.12:4.7.0.67"
     deobfCompile "cofh:RedstoneFlux:1.12-2.0.0.1:universal"

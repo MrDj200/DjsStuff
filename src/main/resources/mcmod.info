@@ -1,7 +1,7 @@
 [
 {
-  "modid": "djsattractor",
-  "name": "Attractor",
+  "modid": "djsstuff",
+  "name": "DjsStuff",
   "description": "A mod for your Attraction needs",
   "version": "${version}",
   "mcversion": "${mcversion}",
